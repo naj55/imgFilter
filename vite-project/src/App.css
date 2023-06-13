@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: GE_SS_Two_Bold;
+  src: url(../Fonts/GE_SS_Two_Bold.otf);
+}
+
+@font-face {
+  font-family: GE_SS_Two_Light;
+  src: url(../Fonts/GE_SS_Two_Light.otf);
+}
+
+#signUpBox {
+  margin-left: 27em;
+  border-radius: 9px;
+}
+
+#signupBtn {
+  margin-left: 13em;
+}
+
+#profileImg {
+  margin-left: 4em;
+
+}
+
+#footer {
+  margin-top: 300px;
+}
+
+@media only screen and (max-width:48em) {
+  #signUpBox {
+    margin: 2em;
+  }
+
+  #signupBtn {
+    margin-left: 8em;
+  }
+
+  #profileImg {
+    margin-left: 4em;
+  }
+
+  #flexCard {
+    flex-direction: column-reverse;
+  }
+
+  #cardGrid {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
