@@ -17,6 +17,18 @@ export default function Profile() {
                 setImg(res.data.avatar)
         })
     }, [])
+
+    const userDelete = (id) => {
+        axios.delete(`https://64876d1ebeba62972790a0f0.mockapi.io/data/users/${id}`).then(res => {
+            setName(name.filter(del => {
+                return del.id != id
+            }))
+
+        })
+        localStorage.clear()
+        Navigate('/')
+    }
+
     return (
         <>
             <Flex gap='5'>
@@ -29,6 +41,7 @@ export default function Profile() {
                             <Box h="2em" bg="white" borderRadius=".25em">{name}</Box>
                             <Box h="2em" bg="white" borderRadius=".25em" >{email}</Box>
                             <Button bg="skyblue" onClick={() => Navigate('/ProfileUpdate')}> Edit</Button>
+                            <Button bg="skyblue" onClick={() => userDelete(localStorage.getItem("id"))}> Delete</Button>
                         </Stack>
                     </Flex>
                 </Box>
