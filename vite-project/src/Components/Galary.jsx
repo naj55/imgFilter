@@ -1,11 +1,12 @@
 import { React, useState, useEffect } from 'react'
 import { Box, Flex, Grid, Card, Stack, Heading, Text, CardBody, Divider, CardFooter, Button, ButtonGroup, Image, Input } from '@chakra-ui/react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 export default function Galary() {
     const [msg, setMsg] = useState("there is no matching data")
     const [search, setSearch] = useState([])
     const [data, setData] = useState([])
-
+    const Navigate = useNavigate()
 
     useEffect(() => {
         axios.get("https://64876d1ebeba62972790a0f0.mockapi.io/data/imges").then((res) => {
@@ -50,7 +51,7 @@ export default function Galary() {
                                             </CardBody>
                                             <Divider />
                                             <CardFooter>
-                                                <Button variant='solid' colorScheme='blue'>
+                                                <Button onClick={() => Navigate(`/Galary/${item.id}`)}>
                                                     More
                                                 </Button>
                                             </CardFooter>

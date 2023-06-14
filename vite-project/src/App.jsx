@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 import Profile from './Components/Profile'
 import ProfileUpdate from './Components/ProfileUpdate'
 import Galary from './Components/Galary'
+import ImgDetail from './Components/imgDetail'
 import Footer from './Components/Footer'
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <Route path="/Profile" element={< Profile />}></Route>
         <Route path="/ProfileUpdate" element={< ProfileUpdate />}></Route>
         <Route path="/Galary" element={< Galary />}></Route>
-
+        <Route path="/Galary/:id" element={< ImgDetail />}></Route>
       </Routes>
       <Footer></Footer>
     </>
