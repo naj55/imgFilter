@@ -23,7 +23,6 @@ export default function Profile() {
             setName(name.filter(del => {
                 return del.id != id
             }))
-
         })
         localStorage.clear()
         Navigate('/')
